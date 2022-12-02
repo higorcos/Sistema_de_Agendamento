@@ -1,0 +1,36 @@
+/* .btn-Danger{
+    background-color:#e28f30;
+    border-color: #cf5f1e;
+} */
+
+.txt-card{
+    text-align: left;
+}
+.views-td{
+    text-align: center;
+}
+
+.btn{
+    margin-right: 5px;
+}
+.btn:last-child{
+    margin-right: 0px;
+}
+.Title-list-news-admin{
+    display: flex;
+   justify-content: center;
+    margin: 0 0;
+    padding-top: 4%;
+}
+.btn-list-add{
+    display: flex;
+    justify-content:flex-end;
+     margin: 0 0;
+     
+}
+.resultTxt {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+

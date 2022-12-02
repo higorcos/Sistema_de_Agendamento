@@ -1,0 +1,41 @@
+.btn-banner-link {
+    padding-top: 22rem;
+    padding-bottom: 3rem;
+    padding-left: 43rem;   
+    padding-right: 131rem;
+    margin-left: -40rem;
+}
+.carousel-inner {  
+    width: 100% !important;
+}
+.w-100-banner {
+    width: auto !important;
+    margin: 0 auto !important;
+    /* height: 270px !important; */
+    height: 400px !important;
+    border-radius: 15px;
+}
+
+/* ///FORMULÁRIO BANNER */
+
+.checked-form-button input {
+    width: 6rem !important;
+  
+  }
+  .checked-form-button {
+    display: flex;
+}
+
+
+
+@media only screen and (max-width: 1420px){    
+    .w-100-banner {
+        width: 79vw !important;
+        margin: 0 auto !important;
+        /* height: 270px !important; */
+        height: 25vw !important;
+    }
+    .carousel-control-next-icon, .carousel-control-prev-icon {
+        width: 1.3rem;
+    }
+}

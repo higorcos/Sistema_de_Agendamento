@@ -1,0 +1,134 @@
+.container-search-txt {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-search-txt1 {   
+    text-align: center;
+    color: var(--Bem-vindo-color);
+}
+.container-search-txt1 h1{
+    font-weight: 600;
+}
+.txt-init{
+    text-shadow: var(--Bem-vindo-sombra) 0.1em 0.1em 0.1em;
+}
+.container-search {   
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 1%;
+}
+.input-search{
+    max-width: 400px;
+    width: 28%;
+    height: 28%;
+    padding: 10px;
+    margin: 0px;
+    color: #ffffff; 
+    border: 1px solid #ffffff;
+    background-color: rgba(128, 128, 128, 0.618);
+    border-bottom-left-radius: 0.25rem ;
+    border-top-left-radius: 0.25rem;
+    text-shadow: black 0.1em 0.1em 0.2em
+}
+.input-search::placeholder{
+    color: #ffffff;
+}
+
+.svg-search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:20px;
+    height:20px;    
+}
+.link-search{
+    border-bottom-right-radius: 0.25rem ;
+    border-top-right-radius: 0.25rem;
+    background-color: #ffffff; 
+    padding: 10px;
+    border: 0px;
+}
+
+.input-search:focus{ 
+    outline: none !important;
+    box-shadow: 0 0 10px #4e4a4a;
+    transition: 0.8s;
+}
+
+.box-select-search{
+    width: 50%;
+    min-width: 300px;
+    font-size: 1.5em;
+    border-radius: 15px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  
+    padding: 5px;
+  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*(x,y)*/
+    z-index: 2;
+}
+.form-search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5%;
+
+}
+.form-search label{
+    padding-left: 4px;
+}
+.optionSelect:first-child{
+    padding-top: 10%;
+}
+.optionSelect:last-child{
+    padding-bottom: 10%;
+}
+.form-search button{
+    background: linear-gradient(45deg, #0b48d8, #0f5ff4);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    padding: 0.5rem;
+    border-style: none;
+}
+.form-search button:hover{
+    background: linear-gradient(45deg, #3f79c6, #4080f8);
+    transition: 2s;
+}
+.form-search button:active{
+    background: linear-gradient(45deg, #385ab9, #4080f8);
+    transition: 2s;
+}
+.form-search h5{
+    text-align: center;
+}
+.close-box{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #ffffff;
+    padding: 5px;
+    padding-bottom:10px;
+  
+}
+.svg-close img{
+    width: 20px;
+    height: 20px;
+}
+@media screen and (max-width: 522px) {
+.input-search{
+    
+    width: 70%;
+
+}
+
+.svg-search{
+    display: block;
+      
+}
+
+}

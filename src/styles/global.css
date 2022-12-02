@@ -1,0 +1,121 @@
+:root {
+  --cor-sub-lista-navbar: #000080;
+  --cor-sub-lista-itens-hover: ; /* hover nos itens da lista  */
+  --cor-sub-lista-navbar-txt: #fff;
+  --cor-sub-lista-navbar-txt-hover: #000;
+  --cor-acessibilidade: #000080;
+  --cor-footer: #000080;
+  --cor-txt-navbar: #000080;
+
+  --cor-botao-pagina-principal: #000080;
+  --cor-txt-botao: #ffffff;
+
+  --cor-nome-portal: #000080;
+
+  --Bem-vindo-color: #ececeb;
+  --Bem-vindo-sombra: #000000;
+
+}
+body{
+  background-color: #F0F0F0;
+  font-family: roboto;
+}
+
+
+.title-home {
+  margin-left: 5%;
+  margin-right: 11px;
+  width: 1.4%;
+}
+.fundo_svg{
+
+  /* background-image: url('xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" fill="#0099ff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,240C384,256,480,256,576,218.7C672,181,768,107,864,90.7C960,75,1056,117,1152,117.3C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z') */
+ background-image: url("../../public/imagens/onda.svg");
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ padding-bottom: 30px;
+}
+
+.section-title {
+  margin: 0 auto;
+  max-width: 1350px;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.section-title.rotes_pages {
+  /* PADDING: 20PX; */
+  padding-left: 33px;
+}
+a {
+  color: #000000;
+  text-decoration: none;
+}
+.border {
+  border: 1px solid var(--cor-nome-portal )!important;
+}
+
+.icon-title{
+  width: 25px;
+  margin-right: 0.5rem;
+}
+.pagination {
+justify-content: center;
+}
+.main-footer{ 
+  /* rodapé */
+ /* cor no fundo */
+
+  background-color: var(--cor-footer);
+  
+
+ /* Imagem de fundo */
+ /* background-image: url("../../public/imagens/IMG_1435.JPG"); */
+ /* background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ color: rgb(0, 0, 0);   */
+}
+.background-global {
+  /* Dependendo da cor do fundo escolhido a cor do texto muda tbm  */
+
+  /* Imagem de fundo */
+  /* background-image: url("../../public/imagens/IMG_1435.JPG");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(0, 0, 0);   */
+
+  
+  /* background-image: url("../../public/imagens/fundo-site.jpeg");
+  background-position-x: center;
+  background-position-y: -436px; */
+  color: #000;
+}.background-global2 {
+  /* Colorido/*/
+   color: rgb(255, 255, 255); 
+     
+  background: linear-gradient(45deg, #009c00, #00009c,#d60000,#f6cc01);
+  background-size: 300% 300%;
+  animation: colors 5s ease infinite;  
+}
+@keyframes colors {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .section-title {
+    margin-top: 40px;
+    max-width: 1350px;
+    height: 13%;
+  }
+  
+}

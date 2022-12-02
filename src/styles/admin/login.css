@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.container-admin-login{
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    background: linear-gradient(45deg, #0b48d8, #0f5ff4)
+   
+}
+
+form.form-admin-login{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 96vh;
+    align-items: center;
+    margin: 0 auto;
+
+}
+.form-container{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 15px rgb(0, 0, 0,0.2);
+    margin-top: 20vh;
+    width: 50%;
+    max-width: 600px;
+    min-width: 300px;
+    padding: 30px;
+    border-radius: 15px;
+
+}
+.title-login{
+    margin-bottom: 10px;
+}
+.form-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-login input{
+    text-align: center;
+    border-style:none;
+    border: 1px solid  #0b49d848;
+    border-radius: 4px;
+    outline:none;
+    width: 50%;
+    max-width: 600px;
+    min-width: 200px;
+    /* position: relative; */
+}
+.form-login input:focus{
+    border: 1px solid #0b48d8;
+
+}
+/* .form-login{
+    position: relative;
+}
+.form-login .underline::before{
+    content:'';
+    position:absolute;
+    height: 1px;
+    width: 49%;
+    bottom: -3px;
+    left: 25%;
+    background: rgba(0, 0, 0, 0.274);
+}
+.form-login .underline::after{
+    content:'';
+    position:absolute;
+    height: 1px;
+    width: 49%;
+    bottom: -3px;
+    left: 25%;
+    background: linear-gradient(45deg, #0b48d8, #0f5ff4);
+    transform: scaleX(0);
+}
+.form-login input:focus ~ .underline::after{
+    transform: scaleX(1);
+    background-color: azure;
+}
+ */
+
+
+.form-login{
+    margin-top: 1rem;
+}
+
+.link-form-log {
+    display: flex !important;
+    justify-content: space-evenly !important;
+    padding-top: 14px;
+}
+.button-submit-login{
+    margin-top: 1.6rem;
+}
+.img-login{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    margin-bottom: 30px;
+
+}
+.img-login img{
+    width: 100%;
+}
+.img-login img:first-child{
+    margin-right: 10px;
+}
+/* para quando tiver logo com o nome da prefeitura */
+.img-login:last-child{
+    /* width: 180px;     */
+}
+
+input.button-submit-login {
+    background: linear-gradient(45deg, #0b48d8, #0f5ff4);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    padding: 0.5rem;
+    border-style: none;
+}
+input.button-submit-login:hover{
+    background: linear-gradient(45deg, #0b49d8c4, #0f5ff4c0);
+}
+
+.link-user-login{
+    margin-top: 15px;
+    color:#16161699;;
+    text-decoration: none;
+    font-weight:500;
+
+}
+.link-user-login:hover{
+    color:#3c6ad4;
+    text-decoration: none;
+}
