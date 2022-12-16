@@ -13,27 +13,49 @@ export default function List() {
 
 
   useEffect(() => {
+    setRemoveLoading(false)
+
     api.get("/user/list").then((res) => {
       setUsers(res.data.dados);
       setRemoveLoading(true)
-      
     });
   }, []);
 
   useEffect(() => {
-    console.log('mudou')
-    // api.get("/user/list").then((res) => {
-    //   setRemoveLoading(true)
-    // });
-  }, [switchStatus]);
-  const clickLoading = ()=>{
     setRemoveLoading(false)
+
+    if(switchStatus){
+      api.get("/user/list/ADMIN").then((res) => {
+        setUsers(res.data.dados);    
+        setRemoveLoading(true)
+      });
+    }else{
+      api.get("/user/list/NORMAL").then((res) => {
+        setUsers(res.data.dados);   
+        setRemoveLoading(true)
+      });
+    }
+  }, [switchStatus]);
+  
+  const authorize = (matricula)=>{
+
+    setRemoveLoading(false)
+    if(switchStatus){
+    api.put("/user/disallow/monitor",{matricula}).then((res) => {
+      setUsers(users.filter((user) => user.matricula !== matricula)); 
+      console.log('disa')
+      setRemoveLoading(true)
+    });
+  }else{
+    api.put("/user/authorize/monitor",{matricula}).then((res) => {
+      setUsers(users.filter((user) => user.matricula !== matricula)); 
+      console.log('auth')
+      setRemoveLoading(true)
+    });
   }
 
-  
+  }
 
-
-  
   return (
     <>
      {!removeLoading && <Loading/> }
@@ -47,7 +69,7 @@ export default function List() {
       <Form.Check 
         type="switch"
         id="custom-switch"
-        label={!switchStatus ? 'Pedidos de acesso':"Usuários autorizados"}
+        label={!switchStatus ? "Usuários comuns":"Usuários autorizados"}
         // onChange={(e) =>  setSwitch(e.target.value)}
         onChange ={(e) => setSwitchStatus(!switchStatus)}
       />
@@ -72,10 +94,11 @@ export default function List() {
                 <Button
                   className="btn-Danger"
                   variant="primary"
-                  href={"/user/authorize/monitor/" + users.matricula}
-                  onClick={() => clickLoading()}
+                  //href={`/user/${switchStatus ? "authorize" : "disallow"}`}
+                  
+                  onClick={() =>  authorize(users.matricula)}
                 >
-                  Ver
+                  {switchStatus ? "Revocar admin":'Tornar admin'}
                 </Button>
                 
               </td>

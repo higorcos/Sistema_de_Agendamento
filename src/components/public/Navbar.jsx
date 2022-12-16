@@ -32,8 +32,7 @@ export default function NavbarAdmin(){
               className="nav-logo-left d-inline-block align-top"
             />{' '}
                 </Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
-          
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />             
           </Container>
         </Navbar>   
     </>

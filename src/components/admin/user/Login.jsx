@@ -4,11 +4,13 @@ import Loading from "../../public/others/LoadingFull";
 import React, { useState, useRef, useEffect } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { useNavigate } from "react-router-dom";
-import api from "../../../services/api";
+import { AuthContext } from "../../../contexts/auth";
+import { useContext } from "react";
 
 export default function AdminNews() {
   
   const navigate = useNavigate();
+  const {login} = useContext(AuthContext)
 
   const [email, setEmail] = useState("");
   const [matricula, setMatricula] = useState("");
@@ -22,26 +24,10 @@ export default function AdminNews() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setRemoveLoading(false);
+    login(email,matricula)
+    
 
-    await api
-      .post("/user/login",{
-        email, 
-        matricula, 
-        })
-      .then((res) => {
-        if (res.data.err) {
-          alert("Ocorreu um erro, tente novamente!!!");
-          setRemoveLoading(true);
-        } else {
-          //alert("");
-          setRemoveLoading(true);
-          navigate("/");
-        }
-      })
-      .catch((err) => {
-        setRemoveLoading(true);
-        alert("Ocorreu um erro, tente novamente!!!");
-      });
+         
   };
 
   return (

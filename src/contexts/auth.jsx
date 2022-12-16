@@ -5,20 +5,23 @@ import { useEffect } from "react";
 
 export const AuthContext = createContext()
 
-export const AuthProvicer =({children})=> {
+export  const AuthProvicer =({children})=> {
 
     const [statusUser, setStatusUser] = useState(false)
     const [user,setUser] = useState(null)
+    const [funcao,setFuncao] = useState(null)
     const [loading, setLoading] = useState(true)
     const navigate = useNavigate();
     
     useEffect(()=>{
         const recoveryUser = localStorage.getItem('user')
         const recoveryToken = localStorage.getItem('tokenUser')
+        const recoveryFuncion = localStorage.getItem('user_system')
 
-        if(recoveryUser && recoveryToken){
+        if(recoveryUser && recoveryToken && recoveryFuncion ){
             setUser(recoveryUser)
-            api.defaults.headers['x-access-token'] =  recoveryToken
+            setFuncao(recoveryFuncion)
+            api.defaults.headers['x-access-token'] =  recoveryToken 
             setStatusUser(true)
         }else{
             setStatusUser(false)
@@ -28,20 +31,29 @@ export const AuthProvicer =({children})=> {
     },[])
     
     const login =(email, password)=>{
-
-    api.post('/login',{
+    api.post('/user/login',{
             email:email,
-            password:password
+            matricula:password
     }).then((res)=>{
-    if(res.data.auth){ // se autorização
+    if(!res.data.err){ // se autorização
         const token = res.data.token
-        setUser(email)
+        const dados = res.data.dados
+        const funcao = dados.funcao_sistema
+        setUser(dados.matricula)
+        setFuncao(funcao)
         setStatusUser(true)
         
         localStorage.setItem('tokenUser',token)
-        localStorage.setItem('user',email)
+        localStorage.setItem('user',user)
+        localStorage.setItem('user_system', funcao)
         api.defaults.headers['x-access-token'] =  token
-        navigate('/admin/noticias/painel')
+        
+        if(funcao == "ADMIN"){
+            navigate('/')
+        }else{
+            navigate('/userComun')
+
+        }
         
         }else{// se não tiver autorização
             setStatusUser(false)
@@ -68,7 +80,7 @@ export const AuthProvicer =({children})=> {
 
     }
     return(
-      <AuthContext.Provider value={{authenticated: statusUser,user, loading, login, logout}}>
+      <AuthContext.Provider value={{authenticated: statusUser,user,funcao, loading, login, logout}}>
    {children}
     </AuthContext.Provider>
     )

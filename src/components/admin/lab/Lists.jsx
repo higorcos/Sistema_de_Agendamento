@@ -1,4 +1,4 @@
-import { Button, Table, Form } from "react-bootstrap";
+import { Button, Table } from "react-bootstrap";
 import "../../../styles/lists.css";
 import { useState, useEffect } from "react";
 import api from "../../../services/api";
@@ -6,12 +6,13 @@ import Loading from "../../public/others/LoadingFull";
 
  
 export default function List() {
-  const [users, setUsers] = useState([]);
+  const [labs, setLabs] = useState([]);
   const [removeLoading, setRemoveLoading] = useState(false) //loading
+  const [boxShowEdit, setBoxShowEdit]= useState(false)
 
   useEffect(() => {
     api.get("/lab/list").then((res) => {
-      setUsers(res.data.dados);
+      setLabs(res.data.dados);
       setRemoveLoading(true)      
     });
   }, []);
@@ -19,14 +20,29 @@ export default function List() {
   const clickLoading = ()=>{
     setRemoveLoading(false)
   }
+  const deleteLab = (id)=>{
+    //setRemoveLoading(false)
+    api.delete(`/lab/delete/${id}`).then((res) => {
+    setLabs(labs.filter((lab) => lab.id !== id)); 
+    setRemoveLoading(true)      
+    });
+
+  }
  
   return (
     <>
      {!removeLoading && <Loading/> }
     <div className="container list-ste">
       <div className="Title-list-news-admin">
-        <h3>Usuários</h3>
+        <h3>Laboratório</h3>
       </div>
+      <Button
+        className="btn-success"
+        variant="primary"
+        href={"/admin/lab"}
+      >
+        Criar novo Lab
+      </Button>
     <div className="btn-list-add">
     </div>
       <Table responsive>
@@ -38,24 +54,24 @@ export default function List() {
           </tr>
         </thead>
         <tbody>
-          {users.map((users, index) => (
+          {labs.map((labs, index) => (
             <tr key={index}>
-              <td className="title-td">{users.nome}</td>
+              <td className="title-td">{labs.nome}</td>
 
-              <td>{users.predio}</td>
+              <td>{labs.predio}</td>
               <td>
                 <Button
                   className="btn-Danger"
                   variant="primary"
-                  href={"/" + users.id}
+                  href={"/admin/lab/booking/list/" + labs.id}
                   onClick={() => clickLoading()}
                 >
-                  Ver
+                  Gerenciar
                 </Button>
                 <Button
                   className="btn-Danger"
                   variant="warning"
-                  href={"/" + users.id}
+                  href={"/admin/lab/edit/" + labs.id}
                   onClick={() => clickLoading()}
                 >
                   Editar
@@ -63,8 +79,8 @@ export default function List() {
                 <Button
                   className="btn-Danger"
                   variant="danger"
-                  href={"/" + users.id}
-                  onClick={() => clickLoading()}
+                  
+                  onClick={() => deleteLab(labs.id)}
                 >
                   Apagar
                 </Button>
@@ -74,8 +90,13 @@ export default function List() {
           ))}
         </tbody>
       </Table>
-      {users.length === 0 && <p className="resultTxt">Nenhum resultado</p>}
+      {labs.length === 0 && <p className="resultTxt">Nenhum resultado</p>}
     </div>
+
+
+    {boxShowEdit && (
+      <div></div>
+    )}
       </>
   );
 }
