@@ -1,5 +1,5 @@
 import AdminNavbar from "../../../components/admin/Navbar"
-import ListBooking from "../../../components/admin/booking/List"
+import ListBooking from "../../../components/admin/booking/ListUser"
 import { useParams } from "react-router-dom"
 
 export default function AdminListBanner(){

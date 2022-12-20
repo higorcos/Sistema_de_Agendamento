@@ -41,7 +41,7 @@ export default function AdminNews() {
         } else {
           //alert("");
           setRemoveLoading(true);
-          navigate("/");
+          navigate("/admin/login");
         }
       })
       .catch((err) => {

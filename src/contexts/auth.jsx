@@ -39,7 +39,8 @@ export  const AuthProvicer =({children})=> {
         const token = res.data.token
         const dados = res.data.dados
         const funcao = dados.funcao_sistema
-        setUser(dados.matricula)
+        //console.log(res.dados.matricula)
+        setUser(res.data.dados.matricula)
         setFuncao(funcao)
         setStatusUser(true)
         

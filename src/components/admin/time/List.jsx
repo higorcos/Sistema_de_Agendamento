@@ -16,9 +16,7 @@ export default function ListTimes() {
 
     api.get("/time/list/").then((res) => {
       setTime(res.data.dados);  
-      
       setRemoveLoading(true)
-      
     });
   }, []);
   useEffect(() => {

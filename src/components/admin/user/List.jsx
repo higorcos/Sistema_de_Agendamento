@@ -9,7 +9,7 @@ export default function List() {
   const [users, setUsers] = useState([]);
   const [removeLoading, setRemoveLoading] = useState(false) //loading
 
-  const [switchStatus, setSwitchStatus] = useState(false)
+  const [switchStatus, setSwitchStatus] = useState(0)
 
 
   useEffect(() => {

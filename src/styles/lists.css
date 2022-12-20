@@ -103,7 +103,7 @@ label.form-news {
  input[type='checkbox'] {
     height: 1em;
 }
-.form-switch .form-check-input {
+.form-switch .form-check-input#id-switch-visibilidade-time{
     width: 93px;
     height: 44px;
     margin-left: -2.5em;
@@ -114,4 +114,156 @@ label.form-news {
 }
 .switch-visibilidade-time.form-switch {
     margin-top: 10px;
+}
+
+
+
+.show-booking{
+
+    background-color: rgba(0, 0, 0, 0.329);
+    position: fixed; 
+    z-index: 0;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+}
+.show-booking div.box-fi{
+    background: #E9E9E9;
+    border: 20px solid #E9E9E9;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.35);
+    font-size: 1em;
+    height: 80%;
+    left: 50%;
+    min-width: 300px;
+    padding: 5px;
+    position: fixed;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    width: 50%;
+}
+.img-box-booking{
+    display: flex;
+    justify-content: end;
+}
+.show-booking .title{
+    display: flex;
+    justify-content: center;
+}
+.body-infor  .justify-infor p{
+   
+    text-align: center;
+}
+.show-booking .body-infor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.show-booking .justify-infor{
+    overflow-y: scroll;
+}
+.body-infor div{
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 282px;
+    height: 102px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.25);
+
+   
+}
+
+.body-infor .data-info{
+    padding-top: 13px;
+    text-align: center;
+    height: 51px;
+}
+.body-infor .dates-infor-box{
+    text-align: center;
+   
+    }
+.body-infor .dates-infor-box ul{
+    text-align: left;
+    list-style-type: none;
+    list-style: url('https://github.com/higorcos/Sistema_de_Agendamento/blob/cb7ad48616ef30c7ddfeed08d548381cf5e7a278/public/icons/clock.svg');
+    margin: 0;
+    padding: 14px;
+    }
+.body-infor .dates-infor-box{
+    /* width: 88px; */
+    height: 188px;
+}
+h6.aaa{
+    margin-top: 25px;
+}
+input.form-booking {
+   
+    text-align: center;
+    width: 412px;
+    height: 51px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.25);
+    border: 2px solid #eee;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  
+    width: 282px;
+    height: 102px;
+}
+div.button-card{
+   
+        /* margin-top: 10px; */
+        /* margin-bottom: 10px; */
+        width: auto;
+        height: auto;
+        /* height: 102px; */
+        background-color: #E9E9E9;
+        border-radius: 0px;
+        padding: 0px;
+        box-shadow: 0 ;
+    
+}
+
+
+
+/* booking-new */
+.form-admin-news select {
+    text-align: center;
+    width: 412px;
+    height: 51px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.25);
+}
+input[type='text'].justify-input-new{
+    text-align: center;
+    overflow-y: scroll;
+    /* width: 248px; */
+    height: 102px;
+}
+
+.ckeck-time-booking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFFF;
+    width: 421px;
+    margin: 0 auto;
+}
+
+.ckeck-time-booking input[type='checkbox']{
+    text-align: center;
+    width: 75px !important;
+    height: 22px;
+    box-shadow: 0px 0px 0px !important;
+    
+}
+.ckeck-time-booking label.card-time {
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    margin: 4px;
+    
 }
